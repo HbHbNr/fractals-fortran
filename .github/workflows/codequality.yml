@@ -1,0 +1,17 @@
+name: Code quality
+
+on: [push]
+
+jobs:
+
+
+  runall:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test GFortran
+      run: |
+        gfortran --version
+    - uses: actions/checkout@v3
+    - name: Make and run all binaries
+      run: |
+        make DEBUG= runall
